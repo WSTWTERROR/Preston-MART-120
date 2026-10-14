@@ -1,11 +1,38 @@
 <html>
+<head>
+    <title>Contact Us</title>
+
+
+
+<script>
+function checkit() {
+    if(document.getElementById("firstandlastname").value == "") {
+
+        document.getElementById("firstandlastname").style.backgroundColor = "red";
+        document.getElementById("required").innerHTML = "* Required"
+    }
+
+
+    if(document.getElementById("emailaddress").value == "") {
+        document.getElementById("emailaddress").style.backgroundColor = "red";
+        document.getElementById("required2").innerHTML = "* Required"
+    }
+
+}
+</script>
+
+</head>
+
+
+
     <h1>Contact Us!</h1>
     <p>Please leave your name and email address below, and we will get back to you as soon as possible.</p>
     <form action="My Website.html">
-       <input type="text" placeholder="First and Last name"> 
-       <input type="email" placeholder="Email address">
+       <input type="text" placeholder="First and Last name" id="firstandlastname"> <span id="required"></span>
+       <input type="email" placeholder="Email address" id="emailaddress"> <span id="required2"></span>
        <h5>Do you agree to our terms?</h5>
-       <input type="submit" value="I Agree">
+       <input type="checkbox" id="agree">
+       <button type="button" onclick="checkit()">I agree</button> 
     </form>
     <form action="Secret Page 4.html" method="get">
         <input type="submit" value="I disagree">
